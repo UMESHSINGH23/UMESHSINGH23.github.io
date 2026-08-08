@@ -30,8 +30,1734 @@
         Umesh Singh | IT Support Specialist
     </title>
 
-    <link rel="stylesheet"
-          href="style.css">
+
+    <style>
+
+        /* =========================================================
+           Umesh Singh — Professional IT Portfolio
+           Complete Single-File Website
+        ========================================================= */
+
+
+        /* =========================================================
+           1. RESET & BASE
+        ========================================================= */
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+
+        html {
+            scroll-behavior: smooth;
+            scroll-padding-top: 80px;
+        }
+
+
+        body {
+            font-family:
+                -apple-system,
+                BlinkMacSystemFont,
+                "Segoe UI",
+                Roboto,
+                Helvetica,
+                Arial,
+                sans-serif;
+
+            background: #ffffff;
+            color: #172033;
+
+            line-height: 1.7;
+
+            -webkit-font-smoothing: antialiased;
+            text-rendering: optimizeLegibility;
+        }
+
+
+        a {
+            color: inherit;
+            text-decoration: none;
+        }
+
+
+        ul {
+            padding-left: 1.25rem;
+        }
+
+
+        /* =========================================================
+           2. DESIGN VARIABLES
+        ========================================================= */
+
+        :root {
+
+            --primary: #3048d8;
+            --primary-dark: #2538ae;
+
+            --text: #172033;
+            --text-soft: #536074;
+            --text-light: #697386;
+
+            --border: #e4e8ef;
+
+            --background: #ffffff;
+            --background-soft: #f6f8fc;
+
+            --dark: #101827;
+
+            --container: 1120px;
+
+            --radius: 14px;
+
+            --shadow:
+                0 10px 35px rgba(15, 23, 42, 0.07);
+
+            --transition:
+                180ms ease;
+        }
+
+
+        /* =========================================================
+           3. GLOBAL
+        ========================================================= */
+
+        .container {
+
+            width:
+                min(
+                    calc(100% - 40px),
+                    var(--container)
+                );
+
+            margin: 0 auto;
+        }
+
+
+        .section {
+            padding: 110px 0;
+        }
+
+
+        .section-light {
+            background: var(--background-soft);
+        }
+
+
+        .section-label {
+
+            margin-bottom: 14px;
+
+            color: var(--primary);
+
+            font-size: 0.76rem;
+
+            font-weight: 800;
+
+            letter-spacing: 0.15em;
+
+            text-transform: uppercase;
+        }
+
+
+        .section h2 {
+
+            margin-bottom: 45px;
+
+            color: var(--text);
+
+            font-size:
+                clamp(2.2rem, 4vw, 3.5rem);
+
+            line-height: 1.1;
+
+            letter-spacing: -0.045em;
+
+            font-weight: 800;
+        }
+
+
+        /* =========================================================
+           4. NAVIGATION
+        ========================================================= */
+
+        .navbar {
+
+            position: sticky;
+
+            top: 0;
+
+            z-index: 1000;
+
+            background:
+                rgba(255, 255, 255, 0.96);
+
+            border-bottom:
+                1px solid var(--border);
+
+            backdrop-filter:
+                blur(12px);
+
+            -webkit-backdrop-filter:
+                blur(12px);
+        }
+
+
+        .nav-container {
+
+            min-height: 76px;
+
+            display: flex;
+
+            align-items: center;
+
+            justify-content: space-between;
+
+            gap: 30px;
+        }
+
+
+        .logo {
+
+            font-size: 1.1rem;
+
+            font-weight: 750;
+
+            letter-spacing: -0.02em;
+        }
+
+
+        .navbar nav {
+
+            display: flex;
+
+            align-items: center;
+
+            gap: 27px;
+        }
+
+
+        .navbar nav a {
+
+            color: var(--text-soft);
+
+            font-size: 0.88rem;
+
+            font-weight: 600;
+
+            transition:
+                color var(--transition);
+        }
+
+
+        .navbar nav a:hover {
+
+            color: var(--primary);
+        }
+
+
+        /* =========================================================
+           5. HERO
+        ========================================================= */
+
+        .hero {
+
+            min-height: 720px;
+
+            display: flex;
+
+            align-items: center;
+
+            background:
+
+                radial-gradient(
+                    circle at 85% 25%,
+                    rgba(48, 72, 216, 0.09),
+                    transparent 35%
+                ),
+
+                linear-gradient(
+                    180deg,
+                    #ffffff 0%,
+                    #f8faff 100%
+                );
+
+            border-bottom:
+                1px solid var(--border);
+        }
+
+
+        .hero-grid {
+
+            display: grid;
+
+            grid-template-columns:
+                minmax(0, 1fr)
+                310px;
+
+            gap: 70px;
+
+            align-items: center;
+        }
+
+
+        .hero-content {
+
+            padding:
+                105px 0 115px;
+        }
+
+
+        .eyebrow {
+
+            margin-bottom: 18px;
+
+            color: var(--primary);
+
+            font-size: 0.78rem;
+
+            font-weight: 800;
+
+            letter-spacing: 0.16em;
+
+            text-transform: uppercase;
+        }
+
+
+        .hero h1 {
+
+            max-width: 900px;
+
+            margin-bottom: 22px;
+
+            color: var(--text);
+
+            font-size:
+                clamp(3.5rem, 7vw, 6.4rem);
+
+            line-height: 0.98;
+
+            letter-spacing: -0.055em;
+
+            font-weight: 800;
+        }
+
+
+        .hero h2 {
+
+            max-width: 780px;
+
+            margin-bottom: 26px;
+
+            color: #3c475a;
+
+            font-size:
+                clamp(1.35rem, 2.5vw, 1.95rem);
+
+            line-height: 1.35;
+
+            font-weight: 600;
+
+            letter-spacing: -0.025em;
+        }
+
+
+        .hero-description {
+
+            max-width: 760px;
+
+            margin-bottom: 34px;
+
+            color: var(--text-soft);
+
+            font-size: 1.05rem;
+
+            line-height: 1.8;
+        }
+
+
+        .hero-actions {
+
+            display: flex;
+
+            flex-wrap: wrap;
+
+            gap: 12px;
+
+            margin-bottom: 27px;
+        }
+
+
+        /* =========================================================
+           6. BUTTONS
+        ========================================================= */
+
+        .button {
+
+            display: inline-flex;
+
+            align-items: center;
+
+            justify-content: center;
+
+            min-height: 48px;
+
+            padding:
+                0 22px;
+
+            border-radius: 9px;
+
+            font-size: 0.92rem;
+
+            font-weight: 700;
+
+            border:
+                1px solid transparent;
+
+            transition:
+                transform var(--transition),
+                background var(--transition),
+                border-color var(--transition),
+                color var(--transition),
+                box-shadow var(--transition);
+        }
+
+
+        .button:hover {
+
+            transform:
+                translateY(-2px);
+        }
+
+
+        .button.primary {
+
+            color: #ffffff;
+
+            background:
+                var(--text);
+
+            box-shadow:
+                0 8px 20px
+                rgba(16, 24, 39, 0.15);
+        }
+
+
+        .button.primary:hover {
+
+            background:
+                #263247;
+        }
+
+
+        .button.secondary {
+
+            color: var(--text);
+
+            background:
+                #ffffff;
+
+            border-color:
+                #d8dee8;
+        }
+
+
+        .button.secondary:hover {
+
+            border-color:
+                var(--primary);
+
+            color:
+                var(--primary);
+        }
+
+
+        .hero-meta {
+
+            display: flex;
+
+            flex-wrap: wrap;
+
+            gap: 9px;
+
+            color: var(--text-light);
+
+            font-size: 0.87rem;
+        }
+
+
+        .hero-meta span {
+
+            display: inline-flex;
+
+            align-items: center;
+
+            padding:
+                6px 11px;
+
+            background:
+                rgba(255,255,255,0.8);
+
+            border:
+                1px solid var(--border);
+
+            border-radius:
+                999px;
+        }
+
+
+        /* =========================================================
+           7. RECRUITER SNAPSHOT
+        ========================================================= */
+
+        .hero-card {
+
+            padding: 26px;
+
+            background:
+                rgba(255,255,255,0.82);
+
+            border:
+                1px solid var(--border);
+
+            border-radius:
+                var(--radius);
+
+            box-shadow:
+                var(--shadow);
+        }
+
+
+        .card-label {
+
+            margin-bottom: 20px;
+
+            color: var(--primary);
+
+            font-size: 0.7rem;
+
+            font-weight: 800;
+
+            letter-spacing: 0.14em;
+
+            text-transform: uppercase;
+        }
+
+
+        .snapshot-item {
+
+            display: grid;
+
+            grid-template-columns: 75px 1fr;
+
+            gap: 10px;
+
+            padding:
+                15px 0;
+
+            border-bottom:
+                1px solid var(--border);
+        }
+
+
+        .snapshot-item:last-child {
+
+            border-bottom:
+                none;
+
+            padding-bottom: 0;
+        }
+
+
+        .snapshot-item strong {
+
+            color: var(--text);
+
+            font-size: 0.9rem;
+        }
+
+
+        .snapshot-item span {
+
+            color: var(--text-soft);
+
+            font-size: 0.82rem;
+
+            line-height: 1.5;
+        }
+
+
+        /* =========================================================
+           8. ABOUT
+        ========================================================= */
+
+        .about-heading {
+
+            max-width: 850px;
+
+            margin-bottom: 40px;
+        }
+
+
+        .about-heading h2 {
+
+            margin-bottom: 0;
+        }
+
+
+        .about-grid {
+
+            display: grid;
+
+            grid-template-columns:
+                repeat(2, 1fr);
+
+            gap: 60px;
+
+            max-width: 1000px;
+        }
+
+
+        .about-grid p {
+
+            margin-bottom: 22px;
+
+            color: var(--text-soft);
+
+            font-size: 1.03rem;
+
+            line-height: 1.85;
+        }
+
+
+        .about-grid p:last-child {
+
+            margin-bottom: 0;
+        }
+
+
+        /* =========================================================
+           9. PROOF SECTION
+        ========================================================= */
+
+        .proof-section {
+
+            padding:
+                105px 0;
+
+            background:
+                var(--background-soft);
+        }
+
+
+        .proof-section h2 {
+
+            max-width: 800px;
+
+            margin-bottom: 45px;
+
+            color: var(--text);
+
+            font-size:
+                clamp(2.2rem, 4vw, 3.4rem);
+
+            line-height: 1.1;
+
+            letter-spacing: -0.045em;
+        }
+
+
+        .proof-grid {
+
+            display: grid;
+
+            grid-template-columns:
+                repeat(4, 1fr);
+
+            gap: 18px;
+        }
+
+
+        .proof-card {
+
+            padding: 28px;
+
+            background:
+                #ffffff;
+
+            border:
+                1px solid var(--border);
+
+            border-radius:
+                var(--radius);
+
+            transition:
+                transform var(--transition),
+                box-shadow var(--transition),
+                border-color var(--transition);
+        }
+
+
+        .proof-card:hover {
+
+            transform:
+                translateY(-4px);
+
+            border-color:
+                rgba(48,72,216,0.25);
+
+            box-shadow:
+                var(--shadow);
+        }
+
+
+        .proof-number {
+
+            display: block;
+
+            margin-bottom: 22px;
+
+            color: var(--primary);
+
+            font-size: 0.75rem;
+
+            font-weight: 800;
+
+            letter-spacing: 0.1em;
+        }
+
+
+        .proof-card h3 {
+
+            margin-bottom: 12px;
+
+            color: var(--text);
+
+            font-size: 1.05rem;
+        }
+
+
+        .proof-card p {
+
+            color: var(--text-light);
+
+            font-size: 0.9rem;
+
+            line-height: 1.7;
+        }
+
+
+        /* =========================================================
+           10. SKILLS
+        ========================================================= */
+
+        .skills-list {
+
+            display: grid;
+
+            grid-template-columns:
+                repeat(2, 1fr);
+
+            gap: 20px;
+        }
+
+
+        .skill-group {
+
+            padding: 30px;
+
+            background:
+                #ffffff;
+
+            border:
+                1px solid var(--border);
+
+            border-radius:
+                var(--radius);
+
+            transition:
+                transform var(--transition),
+                box-shadow var(--transition),
+                border-color var(--transition);
+        }
+
+
+        .skill-group:hover {
+
+            transform:
+                translateY(-4px);
+
+            border-color:
+                rgba(48,72,216,0.25);
+
+            box-shadow:
+                var(--shadow);
+        }
+
+
+        .skill-group h3 {
+
+            margin-bottom: 20px;
+
+            color: var(--text);
+
+            font-size: 1.12rem;
+
+            letter-spacing: -0.02em;
+        }
+
+
+        .skill-tags {
+
+            display: flex;
+
+            flex-wrap: wrap;
+
+            gap: 8px;
+        }
+
+
+        .skill-tags span {
+
+            padding:
+                7px 11px;
+
+            background:
+                #f0f3fa;
+
+            color:
+                #465268;
+
+            border-radius:
+                999px;
+
+            font-size: 0.78rem;
+
+            font-weight: 650;
+        }
+
+
+        /* =========================================================
+           11. EXPERIENCE
+        ========================================================= */
+
+        .section-intro {
+
+            max-width: 750px;
+
+            margin-top: -25px;
+
+            margin-bottom: 45px;
+
+            color: var(--text-soft);
+
+            font-size: 1rem;
+        }
+
+
+        .timeline {
+
+            border-top:
+                1px solid var(--border);
+        }
+
+
+        .experience-item {
+
+            display: grid;
+
+            grid-template-columns:
+                170px 1fr;
+
+            gap: 48px;
+
+            padding:
+                42px 0;
+
+            border-bottom:
+                1px solid var(--border);
+        }
+
+
+        .experience-date {
+
+            color: var(--text-light);
+
+            font-size: 0.9rem;
+
+            font-weight: 700;
+
+            line-height: 1.5;
+        }
+
+
+        .experience-content {
+
+            max-width: 820px;
+        }
+
+
+        .experience-content h3 {
+
+            margin-bottom: 4px;
+
+            color: var(--text);
+
+            font-size: 1.35rem;
+
+            line-height: 1.3;
+
+            letter-spacing: -0.025em;
+        }
+
+
+        .experience-content h4 {
+
+            margin-bottom: 4px;
+
+            color: var(--primary);
+
+            font-size: 1rem;
+
+            font-weight: 700;
+        }
+
+
+        .experience-meta {
+
+            margin-bottom: 18px;
+
+            color: var(--text-light);
+
+            font-size: 0.88rem;
+        }
+
+
+        .experience-content ul {
+
+            margin-top: 15px;
+        }
+
+
+        .experience-content li {
+
+            margin-bottom: 9px;
+
+            color: var(--text-soft);
+
+            font-size: 0.96rem;
+
+            line-height: 1.65;
+        }
+
+
+        .experience-content li::marker {
+
+            color:
+                var(--primary);
+        }
+
+
+        /* =========================================================
+           12. PROJECTS
+        ========================================================= */
+
+        .projects-grid {
+
+            display: grid;
+
+            grid-template-columns:
+                repeat(2, 1fr);
+
+            gap: 22px;
+        }
+
+
+        .project-card {
+
+            padding: 34px;
+
+            background:
+                #ffffff;
+
+            border:
+                1px solid var(--border);
+
+            border-radius:
+                var(--radius);
+
+            transition:
+                transform var(--transition),
+                box-shadow var(--transition),
+                border-color var(--transition);
+        }
+
+
+        .project-card:hover {
+
+            transform:
+                translateY(-5px);
+
+            border-color:
+                rgba(48,72,216,0.25);
+
+            box-shadow:
+                var(--shadow);
+        }
+
+
+        .project-type {
+
+            margin-bottom: 15px;
+
+            color: var(--primary);
+
+            font-size: 0.72rem;
+
+            font-weight: 800;
+
+            letter-spacing: 0.14em;
+        }
+
+
+        .project-card h3 {
+
+            margin-bottom: 16px;
+
+            color: var(--text);
+
+            font-size: 1.45rem;
+
+            line-height: 1.3;
+
+            letter-spacing: -0.03em;
+        }
+
+
+        .project-card p {
+
+            margin-bottom: 22px;
+
+            color: var(--text-soft);
+
+            font-size: 0.95rem;
+
+            line-height: 1.75;
+        }
+
+
+        .project-tags {
+
+            display: flex;
+
+            flex-wrap: wrap;
+
+            gap: 8px;
+        }
+
+
+        .project-tags span {
+
+            padding:
+                5px 10px;
+
+            border-radius:
+                999px;
+
+            background:
+                #f0f3fa;
+
+            color:
+                #465268;
+
+            font-size: 0.76rem;
+
+            font-weight: 650;
+        }
+
+
+        .project-link {
+
+            display: inline-flex;
+
+            margin-top: 2px;
+
+            color:
+                var(--primary);
+
+            font-size: 0.92rem;
+
+            font-weight: 750;
+
+            transition:
+                color var(--transition);
+        }
+
+
+        .project-link:hover {
+
+            color:
+                var(--primary-dark);
+        }
+
+
+        /* =========================================================
+           13. EDUCATION
+        ========================================================= */
+
+        .education-list {
+
+            border-top:
+                1px solid var(--border);
+        }
+
+
+        .education-item {
+
+            display: grid;
+
+            grid-template-columns:
+                140px 1fr;
+
+            gap: 40px;
+
+            padding:
+                34px 0;
+
+            border-bottom:
+                1px solid var(--border);
+        }
+
+
+        .education-year {
+
+            color:
+                var(--text-light);
+
+            font-size:
+                0.9rem;
+
+            font-weight:
+                700;
+        }
+
+
+        .education-item h3 {
+
+            max-width:
+                850px;
+
+            margin-bottom:
+                8px;
+
+            color:
+                var(--text);
+
+            font-size:
+                1.25rem;
+
+            line-height:
+                1.4;
+
+            letter-spacing:
+                -0.02em;
+        }
+
+
+        .education-item h4 {
+
+            margin-bottom:
+                5px;
+
+            color:
+                var(--primary);
+
+            font-size:
+                0.96rem;
+
+            font-weight:
+                700;
+        }
+
+
+        .education-item p {
+
+            color:
+                var(--text-light);
+
+            font-size:
+                0.88rem;
+        }
+
+
+        /* =========================================================
+           14. TRAINING
+        ========================================================= */
+
+        .training-card {
+
+            max-width:
+                800px;
+
+            padding:
+                32px;
+
+            background:
+                #ffffff;
+
+            border:
+                1px solid var(--border);
+
+            border-radius:
+                var(--radius);
+
+            transition:
+                transform var(--transition),
+                box-shadow var(--transition);
+        }
+
+
+        .training-card:hover {
+
+            transform:
+                translateY(-4px);
+
+            box-shadow:
+                var(--shadow);
+        }
+
+
+        .training-card h3 {
+
+            margin-bottom:
+                8px;
+
+            color:
+                var(--text);
+
+            font-size:
+                1.2rem;
+        }
+
+
+        .training-card p:last-child {
+
+            color:
+                var(--text-soft);
+
+            font-size:
+                0.95rem;
+        }
+
+
+        /* =========================================================
+           15. CONTACT
+        ========================================================= */
+
+        .contact-section {
+
+            padding:
+                110px 0;
+
+            background:
+                var(--dark);
+
+            color:
+                #ffffff;
+        }
+
+
+        .contact-grid {
+
+            display: grid;
+
+            grid-template-columns:
+                1fr 400px;
+
+            gap:
+                80px;
+
+            align-items:
+                center;
+        }
+
+
+        .contact-section .section-label {
+
+            color:
+                #8292ff;
+        }
+
+
+        .contact-section h2 {
+
+            margin-bottom:
+                18px;
+
+            color:
+                #ffffff;
+
+            font-size:
+                clamp(2.5rem, 5vw, 4.5rem);
+
+            line-height:
+                1.05;
+
+            letter-spacing:
+                -0.045em;
+        }
+
+
+        .contact-section p {
+
+            max-width:
+                700px;
+
+            color:
+                #b9c2d1;
+
+            font-size:
+                1rem;
+
+            line-height:
+                1.8;
+        }
+
+
+        .contact-card {
+
+            overflow:
+                hidden;
+
+            background:
+                #172235;
+
+            border:
+                1px solid #2a374d;
+
+            border-radius:
+                var(--radius);
+        }
+
+
+        .contact-link {
+
+            display:
+                flex;
+
+            flex-direction:
+                column;
+
+            gap:
+                4px;
+
+            padding:
+                22px 24px;
+
+            border-bottom:
+                1px solid #2a374d;
+
+            transition:
+                background var(--transition);
+        }
+
+
+        .contact-link:last-child {
+
+            border-bottom:
+                none;
+        }
+
+
+        .contact-link:hover {
+
+            background:
+                #1e2b41;
+        }
+
+
+        .contact-link span {
+
+            color:
+                #8292ff;
+
+            font-size:
+                0.72rem;
+
+            font-weight:
+                800;
+
+            letter-spacing:
+                0.12em;
+
+            text-transform:
+                uppercase;
+        }
+
+
+        .contact-link strong {
+
+            color:
+                #ffffff;
+
+            font-size:
+                0.95rem;
+
+            font-weight:
+                650;
+        }
+
+
+        /* =========================================================
+           16. FOOTER
+        ========================================================= */
+
+        .footer {
+
+            padding:
+                28px 0;
+
+            background:
+                #0b111d;
+
+            color:
+                #7f899a;
+
+            text-align:
+                center;
+
+            font-size:
+                0.8rem;
+        }
+
+
+        .footer p:first-child {
+
+            margin-bottom:
+                4px;
+        }
+
+
+        /* =========================================================
+           17. ACCESSIBILITY
+        ========================================================= */
+
+        a:focus-visible {
+
+            outline:
+                3px solid
+                rgba(48,72,216,0.35);
+
+            outline-offset:
+                4px;
+
+            border-radius:
+                5px;
+        }
+
+
+        /* =========================================================
+           18. TABLET
+        ========================================================= */
+
+        @media (max-width: 1000px) {
+
+            .hero-grid {
+
+                grid-template-columns:
+                    1fr;
+            }
+
+
+            .hero-card {
+
+                max-width:
+                    650px;
+
+                margin-bottom:
+                    70px;
+            }
+
+
+            .proof-grid {
+
+                grid-template-columns:
+                    repeat(2, 1fr);
+            }
+
+
+            .contact-grid {
+
+                grid-template-columns:
+                    1fr;
+            }
+
+
+            .contact-card {
+
+                max-width:
+                    650px;
+            }
+
+        }
+
+
+        /* =========================================================
+           19. MOBILE
+        ========================================================= */
+
+        @media (max-width: 700px) {
+
+            .container {
+
+                width:
+                    min(
+                        calc(100% - 28px),
+                        var(--container)
+                    );
+            }
+
+
+            .nav-container {
+
+                min-height:
+                    68px;
+
+                padding:
+                    15px 0;
+            }
+
+
+            .navbar nav {
+
+                gap:
+                    10px;
+
+                flex-wrap:
+                    wrap;
+
+                justify-content:
+                    flex-end;
+            }
+
+
+            .navbar nav a {
+
+                font-size:
+                    0.74rem;
+            }
+
+
+            .hero {
+
+                min-height:
+                    auto;
+            }
+
+
+            .hero-content {
+
+                padding:
+                    80px 0 60px;
+            }
+
+
+            .hero h1 {
+
+                font-size:
+                    clamp(
+                        3rem,
+                        14vw,
+                        4.5rem
+                    );
+            }
+
+
+            .hero h2 {
+
+                font-size:
+                    1.3rem;
+            }
+
+
+            .hero-description {
+
+                font-size:
+                    0.98rem;
+            }
+
+
+            .hero-actions {
+
+                flex-direction:
+                    column;
+
+                align-items:
+                    stretch;
+            }
+
+
+            .button {
+
+                width:
+                    100%;
+            }
+
+
+            .hero-meta {
+
+                flex-direction:
+                    column;
+
+                align-items:
+                    flex-start;
+            }
+
+
+            .section {
+
+                padding:
+                    80px 0;
+            }
+
+
+            .section h2 {
+
+                margin-bottom:
+                    35px;
+            }
+
+
+            .about-grid {
+
+                grid-template-columns:
+                    1fr;
+
+                gap:
+                    25px;
+            }
+
+
+            .proof-grid {
+
+                grid-template-columns:
+                    1fr;
+            }
+
+
+            .skills-list {
+
+                grid-template-columns:
+                    1fr;
+            }
+
+
+            .experience-item {
+
+                grid-template-columns:
+                    1fr;
+
+                gap:
+                    10px;
+
+                padding:
+                    32px 0;
+            }
+
+
+            .experience-date {
+
+                color:
+                    var(--primary);
+            }
+
+
+            .projects-grid {
+
+                grid-template-columns:
+                    1fr;
+            }
+
+
+            .project-card {
+
+                padding:
+                    28px;
+            }
+
+
+            .education-item {
+
+                grid-template-columns:
+                    1fr;
+
+                gap:
+                    7px;
+            }
+
+
+            .contact-section {
+
+                padding:
+                    85px 0;
+            }
+
+        }
+
+
+        /* =========================================================
+           20. SMALL MOBILE
+        ========================================================= */
+
+        @media (max-width: 480px) {
+
+            .navbar nav {
+
+                display:
+                    none;
+            }
+
+
+            .hero-content {
+
+                padding:
+                    70px 0 55px;
+            }
+
+
+            .hero h1 {
+
+                font-size:
+                    3rem;
+            }
+
+
+            .hero-card {
+
+                margin-bottom:
+                    55px;
+            }
+
+
+            .snapshot-item {
+
+                grid-template-columns:
+                    65px 1fr;
+            }
+
+
+            .skill-group,
+            .project-card,
+            .training-card {
+
+                padding:
+                    24px;
+            }
+
+        }
+
+    </style>
 
 </head>
 
@@ -49,23 +1775,41 @@
 
         <a href="#home"
            class="logo">
+
             Umesh Singh
+
         </a>
 
 
         <nav aria-label="Main navigation">
 
-            <a href="#about">About</a>
+            <a href="#about">
+                About
+            </a>
 
-            <a href="#skills">Skills</a>
+            <a href="#skills">
+                Skills
+            </a>
 
-            <a href="#experience">Experience</a>
+            <a href="#experience">
+                Experience
+            </a>
 
-            <a href="#projects">Projects</a>
+            <a href="#projects">
+                Projects
+            </a>
 
-            <a href="#education">Education</a>
+            <a href="#education">
+                Education
+            </a>
 
-            <a href="#contact">Contact</a>
+            <a href="#training">
+                Training
+            </a>
+
+            <a href="#contact">
+                Contact
+            </a>
 
         </nav>
 
@@ -123,19 +1867,24 @@
 
             <div class="hero-actions">
 
+
                 <a href="#contact"
                    class="button primary">
+
                     Let's Connect
+
                 </a>
 
 
                 <a href="Umesh-Singh-IT-Support-CV.pdf"
                    class="button secondary"
-                   target="_blank">
+                   target="_blank"
+                   rel="noopener noreferrer">
 
                     Download CV
 
                 </a>
+
 
             </div>
 
@@ -160,12 +1909,12 @@
 
 
 
-        <!-- QUICK RECRUITER SUMMARY -->
+        <!-- RECRUITER SNAPSHOT -->
 
         <aside class="hero-card">
 
             <p class="card-label">
-                RECRUITER SNAPSHOT
+                Recruiter Snapshot
             </p>
 
 
@@ -220,8 +1969,8 @@
                 </strong>
 
                 <span>
-                    Currently building
-                    my IT career in Germany
+                    IT Support, System Administration
+                    &amp; IT Operations opportunities
                 </span>
 
             </div>
@@ -250,7 +1999,7 @@
         </p>
 
 
-        <div class="section-heading">
+        <div class="about-heading">
 
             <h2>
                 An IT professional who combines
@@ -301,8 +2050,8 @@
 
             </div>
 
-        </div>
 
+        </div>
 
     </div>
 
@@ -311,7 +2060,7 @@
 
 
 <!-- =====================================================
-     CORE CAPABILITIES
+     WHAT I BRING
 ===================================================== -->
 
 <section class="proof-section">
@@ -353,7 +2102,6 @@
             </article>
 
 
-
             <article class="proof-card">
 
                 <span class="proof-number">
@@ -371,7 +2119,6 @@
                 </p>
 
             </article>
-
 
 
             <article class="proof-card">
@@ -392,7 +2139,6 @@
                 </p>
 
             </article>
-
 
 
             <article class="proof-card">
@@ -465,7 +2211,6 @@
             </article>
 
 
-
             <article class="skill-group">
 
                 <h3>
@@ -486,7 +2231,6 @@
             </article>
 
 
-
             <article class="skill-group">
 
                 <h3>
@@ -505,7 +2249,6 @@
                 </div>
 
             </article>
-
 
 
             <article class="skill-group">
@@ -916,6 +2659,8 @@
         <div class="projects-grid">
 
 
+            <!-- MASTER'S THESIS -->
+
             <article class="project-card">
 
                 <p class="project-type">
@@ -926,15 +2671,16 @@
                 <h3>
                     Cloud-Based Responsible MLOps
                     for High-Risk Credit Scoring
+                    under GDPR and the EU AI Act
                 </h3>
 
 
                 <p>
-                    Master's thesis focused on responsible
-                    machine learning operations for high-risk
-                    credit scoring, combining cloud technologies,
-                    explainability, GDPR principles and the
-                    EU AI Act.
+                    Master's thesis focused on the design and
+                    implementation of a cloud-based responsible
+                    MLOps pipeline for high-risk credit scoring,
+                    with a focus on GDPR compliance, explainability,
+                    responsible AI practices and the EU AI Act.
                 </p>
 
 
@@ -953,6 +2699,8 @@
             </article>
 
 
+
+            <!-- PYTHON PROJECT -->
 
             <article class="project-card">
 
@@ -974,10 +2722,12 @@
                 </p>
 
 
-                <a href="#contact"
-                   class="text-link">
+                <a href="https://github.com/UMESHSINGH23"
+                   target="_blank"
+                   rel="noopener noreferrer"
+                   class="project-link">
 
-                    GitHub project link →
+                    View technical work on GitHub →
 
                 </a>
 
@@ -1125,7 +2875,8 @@
      TRAINING
 ===================================================== -->
 
-<section class="section section-light">
+<section id="training"
+         class="section section-light">
 
     <div class="container">
 
@@ -1142,22 +2893,20 @@
 
         <article class="training-card">
 
-            <div>
+            <p class="project-type">
+                AWS ACADEMY
+            </p>
 
-                <p class="project-type">
-                    AWS ACADEMY
-                </p>
 
-                <h3>
-                    Cloud Web Application Builder
-                </h3>
+            <h3>
+                Cloud Web Application Builder
+            </h3>
 
-                <p>
-                    Completed AWS Academy training focused on
-                    cloud web application development.
-                </p>
 
-            </div>
+            <p>
+                Completed AWS Academy training focused on
+                cloud web application development.
+            </p>
 
         </article>
 
@@ -1201,6 +2950,8 @@
         <div class="contact-card">
 
 
+            <!-- EMAIL -->
+
             <a href="mailto:parihar.umesh@gmail.com"
                class="contact-link">
 
@@ -1215,7 +2966,9 @@
             </a>
 
 
-            <a href="https://www.linkedin.com/"
+            <!-- LINKEDIN -->
+
+            <a href="https://www.linkedin.com/in/umeshatdeutschland"
                target="_blank"
                rel="noopener noreferrer"
                class="contact-link">
@@ -1230,6 +2983,8 @@
 
             </a>
 
+
+            <!-- GITHUB -->
 
             <a href="https://github.com/UMESHSINGH23"
                target="_blank"
@@ -1264,14 +3019,14 @@
 
 <footer class="footer">
 
-    <div class="container footer-content">
+    <div class="container">
 
         <p>
             Umesh Singh · IT Support · System Administration · IT Operations
         </p>
 
         <p>
-            © 2026 Umesh Singh
+            Germany · © 2026 Umesh Singh
         </p>
 
     </div>
