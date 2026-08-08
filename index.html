@@ -430,6 +430,207 @@ body.dark-mode .theme-toggle {
 
 
 /* =========================================================
+   6A. LANGUAGE SELECTOR
+   ========================================================= */
+
+.language-selector {
+
+    position:
+        relative;
+
+    display:
+        inline-flex;
+
+    align-items:
+        center;
+
+    margin-left:
+        4px;
+}
+
+
+.language-toggle {
+
+    display:
+        inline-flex;
+
+    align-items:
+        center;
+
+    justify-content:
+        center;
+
+    min-width:
+        58px;
+
+    height:
+        36px;
+
+    padding:
+        0 10px;
+
+    border:
+        1px solid var(--border);
+
+    border-radius:
+        999px;
+
+    background:
+        var(--background);
+
+    color:
+        var(--text);
+
+    font-family:
+        inherit;
+
+    font-size:
+        0.78rem;
+
+    font-weight:
+        750;
+
+    cursor:
+        pointer;
+
+    transition:
+        background var(--transition),
+        color var(--transition),
+        border-color var(--transition),
+        transform var(--transition);
+}
+
+
+.language-toggle:hover {
+
+    transform:
+        translateY(-1px);
+
+    border-color:
+        var(--primary);
+
+    color:
+        var(--primary);
+}
+
+
+.language-menu {
+
+    position:
+        absolute;
+
+    top:
+        calc(100% + 10px);
+
+    right:
+        0;
+
+    z-index:
+        1100;
+
+    display:
+        none;
+
+    min-width:
+        165px;
+
+    padding:
+        7px;
+
+    background:
+        var(--background);
+
+    border:
+        1px solid var(--border);
+
+    border-radius:
+        12px;
+
+    box-shadow:
+        var(--shadow);
+
+}
+
+
+.language-menu.show {
+
+    display:
+        flex;
+
+    flex-direction:
+        column;
+}
+
+
+.language-menu button {
+
+    width:
+        100%;
+
+    padding:
+        9px 11px;
+
+    border:
+        0;
+
+    border-radius:
+        8px;
+
+    background:
+        transparent;
+
+    color:
+        var(--text);
+
+    text-align:
+        left;
+
+    font-family:
+        inherit;
+
+    font-size:
+        0.8rem;
+
+    font-weight:
+        600;
+
+    cursor:
+        pointer;
+
+    transition:
+        background var(--transition),
+        color var(--transition);
+}
+
+
+.language-menu button:hover {
+
+    background:
+        var(--background-soft);
+
+    color:
+        var(--primary);
+}
+
+
+body.dark-mode .language-menu {
+
+    background:
+        #111c2d;
+
+    border-color:
+        var(--border);
+}
+
+
+body.dark-mode .language-menu button:hover {
+
+    background:
+        #1a2638;
+}
+
+
+/* =========================================================
    7. HERO
    ========================================================= */
 
@@ -2329,6 +2530,41 @@ button:focus-visible {
     }
 
 
+    /* LANGUAGE SELECTOR — MOBILE */
+
+    .language-selector {
+
+        margin-left:
+            0;
+    }
+
+
+    .language-toggle {
+
+        min-width:
+            50px;
+
+        height:
+            34px;
+
+        padding:
+            0 8px;
+
+        font-size:
+            0.72rem;
+    }
+
+
+    .language-menu {
+
+        right:
+            0;
+
+        min-width:
+            155px;
+    }
+
+
     .hero {
 
         min-height:
@@ -2670,6 +2906,104 @@ button:focus-visible {
             <a href="#contact">
                 Contact
             </a>
+
+
+            <!-- =================================================
+                 LANGUAGE SELECTOR
+            ================================================== -->
+
+            <div class="language-selector">
+
+                <button
+                    type="button"
+                    class="language-toggle"
+                    id="languageToggle"
+                    aria-label="Select language"
+                    title="Select language">
+
+                    🌐 <span id="currentLanguage">EN</span>
+
+                </button>
+
+
+                <div
+                    class="language-menu"
+                    id="languageMenu">
+
+                    <button
+                        type="button"
+                        data-language="en">
+
+                        🇬🇧 English
+
+                    </button>
+
+
+                    <button
+                        type="button"
+                        data-language="de">
+
+                        🇩🇪 Deutsch
+
+                    </button>
+
+
+                    <button
+                        type="button"
+                        data-language="fr">
+
+                        🇫🇷 Français
+
+                    </button>
+
+
+                    <button
+                        type="button"
+                        data-language="it">
+
+                        🇮🇹 Italiano
+
+                    </button>
+
+
+                    <button
+                        type="button"
+                        data-language="es">
+
+                        🇪🇸 Español
+
+                    </button>
+
+
+                    <button
+                        type="button"
+                        data-language="pt">
+
+                        🇵🇹 Português
+
+                    </button>
+
+
+                    <button
+                        type="button"
+                        data-language="nl">
+
+                        🇳🇱 Nederlands
+
+                    </button>
+
+
+                    <button
+                        type="button"
+                        data-language="pl">
+
+                        🇵🇱 Polski
+
+                    </button>
+
+                </div>
+
+            </div>
 
 
             <!-- LIGHT / DARK TOGGLE -->
@@ -3955,18 +4289,18 @@ button:focus-visible {
         <div>
 
             <p class="section-label">
-    CONTACT
-</p>
+                CONTACT
+            </p>
 
-<h2>
-    Let's connect.
-</h2>
+            <h2>
+                Let's connect.
+            </h2>
 
-<p>
-    I am interested in IT Support,
-    System Administration and IT Operations
-    opportunities in Germany.
-</p>
+            <p>
+                I am interested in IT Support,
+                System Administration and IT Operations
+                opportunities in Germany.
+            </p>
 
         </div>
 
@@ -4058,7 +4392,7 @@ button:focus-visible {
 
 
 <!-- =====================================================
-     LIGHT / DARK MODE JAVASCRIPT
+     LIGHT / DARK MODE + LANGUAGE JAVASCRIPT
 ===================================================== -->
 
 <script>
@@ -4158,6 +4492,671 @@ themeToggle.addEventListener(
         }
 
     }
+);
+
+
+
+/* =========================================================
+   LANGUAGE SELECTOR
+========================================================= */
+
+const languageToggle =
+    document.getElementById(
+        "languageToggle"
+    );
+
+
+const languageMenu =
+    document.getElementById(
+        "languageMenu"
+    );
+
+
+const currentLanguage =
+    document.getElementById(
+        "currentLanguage"
+    );
+
+
+/* ---------------------------------------------------------
+   Open / close language menu
+--------------------------------------------------------- */
+
+languageToggle.addEventListener(
+    "click",
+    function (event) {
+
+        event.stopPropagation();
+
+        languageMenu.classList.toggle(
+            "show"
+        );
+
+    }
+);
+
+
+/* ---------------------------------------------------------
+   Close menu when clicking outside
+--------------------------------------------------------- */
+
+document.addEventListener(
+    "click",
+    function () {
+
+        languageMenu.classList.remove(
+            "show"
+        );
+
+    }
+);
+
+
+/* ---------------------------------------------------------
+   Prevent menu click from closing immediately
+--------------------------------------------------------- */
+
+languageMenu.addEventListener(
+    "click",
+    function (event) {
+
+        event.stopPropagation();
+
+    }
+);
+
+
+/* ---------------------------------------------------------
+   Language selection
+--------------------------------------------------------- */
+
+const languageButtons =
+    document.querySelectorAll(
+        "[data-language]"
+    );
+
+
+languageButtons.forEach(
+    function (button) {
+
+        button.addEventListener(
+            "click",
+            function () {
+
+                const selectedLanguage =
+                    button.getAttribute(
+                        "data-language"
+                    );
+
+
+                currentLanguage.textContent =
+                    selectedLanguage.toUpperCase();
+
+
+                localStorage.setItem(
+                    "language",
+                    selectedLanguage
+                );
+
+
+                languageMenu.classList.remove(
+                    "show"
+                );
+
+
+                translatePage(
+                    selectedLanguage
+                );
+
+            }
+        );
+
+    }
+);
+
+
+/* =========================================================
+   TRANSLATION SYSTEM
+========================================================= */
+
+const translations = {
+
+    en: {
+
+        nav_about:
+            "About",
+
+        nav_skills:
+            "Skills",
+
+        nav_experience:
+            "Experience",
+
+        nav_projects:
+            "Projects",
+
+        nav_education:
+            "Education",
+
+        nav_training:
+            "Training",
+
+        nav_contact:
+            "Contact",
+
+        eyebrow:
+            "IT SUPPORT · SYSTEM ADMINISTRATION · IT OPERATIONS",
+
+        hero_title:
+            "IT Support Specialist",
+
+        hero_subtitle:
+            "Reliable technology support for people, systems and everyday IT operations.",
+
+        hero_button:
+            "Let's Connect",
+
+        hero_cv:
+            "Download CV",
+
+        snapshot:
+            "Recruiter Snapshot"
+
+    },
+
+
+    de: {
+
+        nav_about:
+            "Über mich",
+
+        nav_skills:
+            "Fähigkeiten",
+
+        nav_experience:
+            "Berufserfahrung",
+
+        nav_projects:
+            "Projekte",
+
+        nav_education:
+            "Ausbildung",
+
+        nav_training:
+            "Weiterbildung",
+
+        nav_contact:
+            "Kontakt",
+
+        eyebrow:
+            "IT-SUPPORT · SYSTEMADMINISTRATION · IT-BETRIEB",
+
+        hero_title:
+            "IT-Support-Spezialist",
+
+        hero_subtitle:
+            "Zuverlässiger technischer Support für Menschen, Systeme und den täglichen IT-Betrieb.",
+
+        hero_button:
+            "Kontakt aufnehmen",
+
+        hero_cv:
+            "Lebenslauf herunterladen",
+
+        snapshot:
+            "Recruiter-Profil"
+
+    },
+
+
+    fr: {
+
+        nav_about:
+            "À propos",
+
+        nav_skills:
+            "Compétences",
+
+        nav_experience:
+            "Expérience",
+
+        nav_projects:
+            "Projets",
+
+        nav_education:
+            "Formation",
+
+        nav_training:
+            "Formation complémentaire",
+
+        nav_contact:
+            "Contact",
+
+        eyebrow:
+            "SUPPORT IT · ADMINISTRATION SYSTÈME · OPÉRATIONS IT",
+
+        hero_title:
+            "Spécialiste Support IT",
+
+        hero_subtitle:
+            "Un support technologique fiable pour les utilisateurs, les systèmes et les opérations informatiques quotidiennes.",
+
+        hero_button:
+            "Me contacter",
+
+        hero_cv:
+            "Télécharger le CV",
+
+        snapshot:
+            "Profil recruteur"
+
+    },
+
+
+    it: {
+
+        nav_about:
+            "Chi sono",
+
+        nav_skills:
+            "Competenze",
+
+        nav_experience:
+            "Esperienza",
+
+        nav_projects:
+            "Progetti",
+
+        nav_education:
+            "Formazione",
+
+        nav_training:
+            "Formazione aggiuntiva",
+
+        nav_contact:
+            "Contatti",
+
+        eyebrow:
+            "SUPPORTO IT · AMMINISTRAZIONE DI SISTEMA · OPERAZIONI IT",
+
+        hero_title:
+            "Specialista IT Support",
+
+        hero_subtitle:
+            "Supporto tecnologico affidabile per persone, sistemi e operazioni IT quotidiane.",
+
+        hero_button:
+            "Contattami",
+
+        hero_cv:
+            "Scarica CV",
+
+        snapshot:
+            "Profilo per recruiter"
+
+    },
+
+
+    es: {
+
+        nav_about:
+            "Sobre mí",
+
+        nav_skills:
+            "Habilidades",
+
+        nav_experience:
+            "Experiencia",
+
+        nav_projects:
+            "Proyectos",
+
+        nav_education:
+            "Educación",
+
+        nav_training:
+            "Formación",
+
+        nav_contact:
+            "Contacto",
+
+        eyebrow:
+            "SOPORTE IT · ADMINISTRACIÓN DE SISTEMAS · OPERACIONES IT",
+
+        hero_title:
+            "Especialista en Soporte IT",
+
+        hero_subtitle:
+            "Soporte tecnológico fiable para personas, sistemas y operaciones informáticas diarias.",
+
+        hero_button:
+            "Contactar",
+
+        hero_cv:
+            "Descargar CV",
+
+        snapshot:
+            "Perfil para reclutadores"
+
+    },
+
+
+    pt: {
+
+        nav_about:
+            "Sobre mim",
+
+        nav_skills:
+            "Competências",
+
+        nav_experience:
+            "Experiência",
+
+        nav_projects:
+            "Projetos",
+
+        nav_education:
+            "Educação",
+
+        nav_training:
+            "Formação",
+
+        nav_contact:
+            "Contacto",
+
+        eyebrow:
+            "SUPORTE DE TI · ADMINISTRAÇÃO DE SISTEMAS · OPERAÇÕES DE TI",
+
+        hero_title:
+            "Especialista em Suporte de TI",
+
+        hero_subtitle:
+            "Suporte tecnológico fiável para pessoas, sistemas e operações de TI diárias.",
+
+        hero_button:
+            "Entrar em contacto",
+
+        hero_cv:
+            "Descarregar CV",
+
+        snapshot:
+            "Perfil para recrutadores"
+
+    },
+
+
+    nl: {
+
+        nav_about:
+            "Over mij",
+
+        nav_skills:
+            "Vaardigheden",
+
+        nav_experience:
+            "Ervaring",
+
+        nav_projects:
+            "Projecten",
+
+        nav_education:
+            "Opleiding",
+
+        nav_training:
+            "Training",
+
+        nav_contact:
+            "Contact",
+
+        eyebrow:
+            "IT-SUPPORT · SYSTEEMBEHEER · IT-OPERATIES",
+
+        hero_title:
+            "IT Support Specialist",
+
+        hero_subtitle:
+            "Betrouwbare technische ondersteuning voor mensen, systemen en dagelijkse IT-operaties.",
+
+        hero_button:
+            "Neem contact op",
+
+        hero_cv:
+            "CV downloaden",
+
+        snapshot:
+            "Recruiterprofiel"
+
+    },
+
+
+    pl: {
+
+        nav_about:
+            "O mnie",
+
+        nav_skills:
+            "Umiejętności",
+
+        nav_experience:
+            "Doświadczenie",
+
+        nav_projects:
+            "Projekty",
+
+        nav_education:
+            "Edukacja",
+
+        nav_training:
+            "Szkolenia",
+
+        nav_contact:
+            "Kontakt",
+
+        eyebrow:
+            "WSPARCIE IT · ADMINISTRACJA SYSTEMAMI · OPERACJE IT",
+
+        hero_title:
+            "Specjalista ds. Wsparcia IT",
+
+        hero_subtitle:
+            "Niezawodne wsparcie technologiczne dla użytkowników, systemów i codziennych operacji IT.",
+
+        hero_button:
+            "Skontaktuj się ze mną",
+
+        hero_cv:
+            "Pobierz CV",
+
+        snapshot:
+            "Profil rekrutera"
+
+    }
+
+};
+
+
+/* =========================================================
+   APPLY TRANSLATIONS
+========================================================= */
+
+function translatePage(language) {
+
+    const t =
+        translations[language];
+
+
+    if (!t) {
+
+        return;
+
+    }
+
+
+    /* -------------------------------------------------------
+       Navigation
+    ------------------------------------------------------- */
+
+    const navLinks =
+        document.querySelectorAll(
+            ".navbar nav > a"
+        );
+
+
+    if (navLinks.length >= 7) {
+
+        navLinks[0].textContent =
+            t.nav_about;
+
+        navLinks[1].textContent =
+            t.nav_skills;
+
+        navLinks[2].textContent =
+            t.nav_experience;
+
+        navLinks[3].textContent =
+            t.nav_projects;
+
+        navLinks[4].textContent =
+            t.nav_education;
+
+        navLinks[5].textContent =
+            t.nav_training;
+
+        navLinks[6].textContent =
+            t.nav_contact;
+
+    }
+
+
+    /* -------------------------------------------------------
+       Hero eyebrow
+    ------------------------------------------------------- */
+
+    const eyebrow =
+        document.querySelector(
+            ".hero .eyebrow"
+        );
+
+
+    if (eyebrow) {
+
+        eyebrow.textContent =
+            t.eyebrow;
+
+    }
+
+
+    /* -------------------------------------------------------
+       Hero title
+    ------------------------------------------------------- */
+
+    const heroTitle =
+        document.querySelector(
+            ".hero h1"
+        );
+
+
+    if (heroTitle) {
+
+        heroTitle.textContent =
+            t.hero_title;
+
+    }
+
+
+    /* -------------------------------------------------------
+       Hero subtitle
+    ------------------------------------------------------- */
+
+    const heroSubtitle =
+        document.querySelector(
+            ".hero h2"
+        );
+
+
+    if (heroSubtitle) {
+
+        heroSubtitle.textContent =
+            t.hero_subtitle;
+
+    }
+
+
+    /* -------------------------------------------------------
+       Hero buttons
+    ------------------------------------------------------- */
+
+    const heroButtons =
+        document.querySelectorAll(
+            ".hero-actions .button"
+        );
+
+
+    if (heroButtons.length >= 2) {
+
+        heroButtons[0].textContent =
+            t.hero_button;
+
+        heroButtons[1].textContent =
+            t.hero_cv;
+
+    }
+
+
+    /* -------------------------------------------------------
+       Recruiter snapshot
+    ------------------------------------------------------- */
+
+    const snapshotLabel =
+        document.querySelector(
+            ".hero-card .card-label"
+        );
+
+
+    if (snapshotLabel) {
+
+        snapshotLabel.textContent =
+            t.snapshot;
+
+    }
+
+
+    /* -------------------------------------------------------
+       Update HTML language attribute
+    ------------------------------------------------------- */
+
+    document.documentElement.lang =
+        language;
+
+
+    /* -------------------------------------------------------
+       Save selected language
+    ------------------------------------------------------- */
+
+    localStorage.setItem(
+        "language",
+        language
+    );
+
+}
+
+
+/* =========================================================
+   LOAD SAVED LANGUAGE
+========================================================= */
+
+const savedLanguage =
+    localStorage.getItem(
+        "language"
+    ) || "en";
+
+
+currentLanguage.textContent =
+    savedLanguage.toUpperCase();
+
+
+translatePage(
+    savedLanguage
 );
 
 </script>
